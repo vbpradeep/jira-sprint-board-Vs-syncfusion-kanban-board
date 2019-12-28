@@ -1,4 +1,4 @@
-# jirasprintVSsyncfusionkanban
+# jira sprint board VS syncfusion kanban board
 
 ![image](./jira-board.gif)
 
