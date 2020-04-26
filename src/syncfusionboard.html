@@ -50,7 +50,7 @@
     <div class="content-container-fluid">
         <div class="row">
             <div class="e-header" >
-                <div id="butdrawer" class="drawericon e-icon">
+                <div id="nav_drawer" class="drawericon e-icon">
                 </div>
                 <h2 id="headerId" style="margin:0">2019Dec2_SyncfusionHelpDesk
                 </h2>
@@ -81,7 +81,7 @@
             document.getElementById('headerId').innerText = text;
 			$("#Kanban").data('ejKanban').KanbanSwimlane.collapseAll();
             var dataManger = ej.DataManager({
-            url: `${<jira-domain>}/rest/api/2/search?jql=sprint%20%3D%20%22${text}%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
+            url: `https://cors-anywhere.herokuapp.com/${'<jira-domain>'}/rest/api/2/search?jql=sprint%20%3D%20%22${text}%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
             crossDomain: true,
             adaptor: new ej.WebApiAdaptor(),
             headers: [
@@ -96,7 +96,7 @@
         }
 
         var dataManger = ej.DataManager({
-            url: `${<jira-domain>}/rest/api/2/search?jql=sprint%20%3D%20%222019Dec2_SyncfusionHelpDesk%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
+            url: `https://cors-anywhere.herokuapp.com/${'<jira-domain>'}/rest/api/2/search?jql=sprint%20%3D%20%222019Dec2_SyncfusionHelpDesk%22&fields=key,summary,assignee,reporter,status,priority,issuetype`,
             crossDomain: true,
             adaptor: new ej.WebApiAdaptor(),
             headers: [
@@ -108,7 +108,7 @@
             ]
         });
         $(function () {
-            $("#navpane").ejNavigationDrawer({ targetId: "butdrawer", contentId: "content_container", type: "overlay", direction: "left", enableListView: true, listViewSettings: { width: 300, selectedItemIndex: 0 }, position: "normal" });
+            $("#navpane").ejNavigationDrawer({ targetId: "nav_drawer", contentId: "content_container", type: "overlay", direction: "left", enableListView: true, listViewSettings: { width: 300, selectedItemIndex: 0 }, position: "normal" });
             $("#Kanban").ejKanban(
                 {
                      dataSource: dataManger,
